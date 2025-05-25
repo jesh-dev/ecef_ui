@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fire Works color */
+    --color-fireworks1: #ED2100;
+    --color-fireworks2: #E88A38;
+    --color-fireworks3: #960016;
+    --color-fireworks4: #BF00AC;
+  }
