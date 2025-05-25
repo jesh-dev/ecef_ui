@@ -48,7 +48,7 @@ function Verify() {
       });
       if (response.status === 200) {
         alert(response.data.message);
-    
+        reset();
       }
     } catch (error) {
       console.log(error);
