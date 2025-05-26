@@ -6,7 +6,7 @@ import AOS from 'aos';
 
 export const Header = () => {
     return (
-      <div className="relative bg-black flex flex-col py-16 lg:pt-0 mt-19 lg:flex-col lg:pb-0">
+      <div className="relative bg-white flex flex-col py-16 lg:pt-0 mt-19 lg:flex-col lg:pb-0">
         <div className="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
           <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
             <div className="max-w-xl mb-6">
@@ -32,9 +32,9 @@ export const Header = () => {
               <Link
                 data-aos="slide-right" data-aos-duration="2000"
                 to="register"
-                className="inline-flex items-center justify-center w-full h-12 ease-in-out delay-300 transition-colors
+                className="inline-flex items-center justify-center w-full h-12 ease-in-out delay-300 
                  px-6 mb-3 font-medium tracking-wide text-(--color-fireworks1) hover:text-white
-                 transition-all duration-300 rounded shadow-md md:w-auto md:mr-4 md:mb-0 bg-(--color-fireworks1) hover:bg-(--color-fireworks3) focus:shadow-outline focus:outline-none"
+                 transition-colors duration-300 rounded shadow-md md:w-auto md:mr-4 md:mb-0 bg-(--color-fireworks1) hover:bg-(--color-fireworks3) focus:shadow-outline focus:outline-none"
               >
                 Apply Now
               </Link>
@@ -51,7 +51,7 @@ export const Header = () => {
         </div>
         <div className="inset-y-0 right-0 w-full max-w-xl px-4  lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
         <img src="https://esocs.church/assets/assets/images/website/slider/20230220_071647_603999.jpg" alt="ESOCS Image"
-        className="rounded-full pt-5" data-aos="zoom-in" data-aos-duration="2000"/>
+        className="rounded-full pt-5 shadow-xl shadow-amber-700" data-aos="zoom-in" data-aos-duration="2000"/>
         </div>
 
       </div>
