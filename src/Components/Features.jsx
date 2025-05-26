@@ -45,7 +45,7 @@ export const Feature = () => {
 
 
           <div className="relative p-px overflow-hidden transition-all delay-300 duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl"
-          data-aos="fade-up" data-aos-duration="3000">
+          data-aos="fade-up" data-aos-duration="1500">
             <div className="absolute bottom-0 left-0 w-full h-1 duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
             <div className="absolute bottom-0 left-0 w-1 h-full duration-300 origin-bottom transform scale-y-0 bg-deep-purple-accent-400 group-hover:scale-y-100" />
             <div className="absolute top-0 left-0 w-full h-1 duration-300 origin-right transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
@@ -85,7 +85,7 @@ export const Feature = () => {
 
 
           <div className="relative p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl"
-          data-aos="fade-up" data-aos-duration="4000">
+          data-aos="fade-up" data-aos-duration="2000">
             <div className="absolute bottom-0 left-0 w-full h-1 duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
             <div className="absolute bottom-0 left-0 w-1 h-full duration-300 origin-bottom transform scale-y-0 bg-deep-purple-accent-400 group-hover:scale-y-100" />
             <div className="absolute top-0 left-0 w-full h-1 duration-300 origin-right transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />

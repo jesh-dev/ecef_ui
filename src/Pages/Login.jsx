@@ -53,7 +53,7 @@ const Login = () => {
         localStorage.setItem("user", JSON.stringify(response.data.user));
         alert(response.data.message);
         console.log(response.data);
-        // history.pushState(donate);
+        history.pushState('/donate');
       }
     } catch (error) {
       alert(error.response.data.message);

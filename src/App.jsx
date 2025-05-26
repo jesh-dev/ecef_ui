@@ -10,24 +10,22 @@ import DonationPage from "./Dashboard/DonationPage";
 import Verify from "./Pages/Verify";
 
 const App = () => {
-
-    return (
-      <>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/register" element={<MyForm />} />
-            <Route path="/product" element={<Content />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact/>} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/donate" element={<DonationPage/>} />
-            <Route path="/verify" element={<Verify/>} />
-          </Routes>
-        </BrowserRouter>
-      </>
-    );
-
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<MyForm />} />
+          <Route path="/product" element={<Content />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/donate" element={<DonationPage />} />
+          <Route path="/verify" element={<Verify />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 };
 
 export default App;

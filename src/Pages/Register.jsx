@@ -84,11 +84,14 @@ function MyForm() {
       });
       if (response.status === 201) {
         alert(response.data.message);
+        reset();
     }
     } catch (error) {
       console.log(error);
       alert(error.response.data.message);
+      reset();
       setErrors(error.response.data.errors);
+
     }
   };
   return (

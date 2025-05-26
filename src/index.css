@@ -7,3 +7,10 @@
     --color-fireworks3: #960016;
     --color-fireworks4: #BF00AC;
   }
+
+  /* button{
+    @apply{
+      bg-gradient-to-r from-(--color-fireworks1) to-(--color-fireworks2);
+      font-mono; text-white;
+    }
+  } */
