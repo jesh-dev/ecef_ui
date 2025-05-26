@@ -42,7 +42,7 @@ export const Header = () => {
               data-aos="flip-left" data-aos-duration="2000"
               to="/about"           
               aria-label="Learn More"
-                className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-white"
+                className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-amber-900"
               >
                 Learn more
               </Link>
