@@ -4,7 +4,7 @@ export const Footer = () => {
       <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8
       bg-amber-700">
         <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4 ">
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2"  data-aos="fade-right" data-aos-duration="2000">
             <a
               href="/"
               aria-label="Go home"
@@ -29,6 +29,7 @@ export const Footer = () => {
               </p>
             </div>
           </div>
+
           <div className="space-y-2 text-sm">
             <p className="text-base font-bold tracking-wide text-gray-900">
               Contacts
@@ -63,13 +64,14 @@ export const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="Our address"
                 title="Our address"
-                className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
+                className="transition-colors duration-300 text-white hover:text-deep-purple-800"
               >
                 Soloki Street, Surulere, Lagos
               </a>
             </div>
           </div>
-          <div>
+
+          <div  data-aos="fade-left" data-aos-duration="2000">
             <span className="text-base font-bold tracking-wide text-gray-900">
               Social
             </span>
@@ -100,21 +102,21 @@ export const Footer = () => {
                 </svg>
               </a>
             </div>
-            <p className="mt-4 text-sm text-gray-500">
+            <p className="mt-4 text-sm text-white">
               Bacon ipsum dolor amet short ribs pig sausage prosciutto chicken
               spare ribs salami.
             </p>
           </div>
         </div>
-        <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t border-t-violet-900 lg:flex-row">
-          <p className="text-sm text-gray-600">
+        <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t border-t-white lg:flex-row">
+          <p className="text-sm text-gray-300">
             © Copyright 2020 Lorem Inc. All rights reserved.
           </p>
           <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
             <li>
               <a
                 href="/"
-                className="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                className="text-sm text-gray-300 transition-colors duration-300 hover:text-deep-purple-accent-400"
               >
                 F.A.Q
               </a>
@@ -122,7 +124,7 @@ export const Footer = () => {
             <li>
               <a
                 href="/"
-                className="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                className="text-sm text-gray-300 transition-colors duration-300 hover:text-deep-purple-accent-400"
               >
                 Privacy Policy
               </a>
@@ -130,7 +132,7 @@ export const Footer = () => {
             <li>
               <a
                 href="/"
-                className="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                className="text-sm text-gray-300 transition-colors duration-300 hover:text-deep-purple-accent-400"
               >
                 Terms &amp; Conditions
               </a>
