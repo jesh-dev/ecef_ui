@@ -42,7 +42,7 @@ export const Header = () => {
               data-aos="flip-left" data-aos-duration="2000"
               to="/about"           
               aria-label="Learn More"
-                className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
+                className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-white"
               >
                 Learn more
               </Link>
@@ -51,7 +51,7 @@ export const Header = () => {
         </div>
         <div className="inset-y-0 right-0 w-full max-w-xl px-4  lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
         <img src="https://esocs.church/assets/assets/images/website/slider/20230220_071647_603999.jpg" alt="ESOCS Image"
-        className="rounded-xl" data-aos="zoom-in" data-aos-duration="2000"/>
+        className="rounded-full pt-5" data-aos="zoom-in" data-aos-duration="2000"/>
         </div>
 
       </div>
