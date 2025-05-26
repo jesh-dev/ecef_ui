@@ -1,8 +1,9 @@
 
 export const Footer = () => {
     return (
-      <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8
+      bg-amber-700">
+        <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4 ">
           <div className="sm:col-span-2">
             <a
               href="/"
@@ -18,11 +19,11 @@ export const Footer = () => {
               </span>
             </a>
             <div className="mt-6 lg:max-w-sm">
-              <p className="text-sm text-gray-800">
+              <p className="text-sm text-white">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam.
               </p>
-              <p className="mt-4 text-sm text-gray-800">
+              <p className="mt-4 text-sm text-white">
                 Eaque ipsa quae ab illo inventore veritatis et quasi architecto
                 beatae vitae dicta sunt explicabo.
               </p>
@@ -38,7 +39,7 @@ export const Footer = () => {
                 href="tel:850-123-5021"
                 aria-label="Our phone"
                 title="Our phone"
-                className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
+                className="transition-colors duration-300 text-white hover:text-deep-purple-800"
               >
                 916-376-7998
               </a>
@@ -49,7 +50,7 @@ export const Footer = () => {
                 href="mailto:info@lorem.mail"
                 aria-label="Our email"
                 title="Our email"
-                className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
+                className="transition-colors duration-300 text-white hover:text-deep-purple-800"
               >
                 jeshrunlaw@gmail.com
               </a>
