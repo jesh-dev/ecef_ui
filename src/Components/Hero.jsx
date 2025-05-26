@@ -32,9 +32,9 @@ export const Header = () => {
               <Link
                 data-aos="slide-right" data-aos-duration="2000"
                 to="register"
-                className="inline-flex items-center justify-center w-full h-12 ease-in-out delay-300 
+                className="inline-flex items-center justify-center w-full h-12 delay-300 duration-700
                  px-6 mb-3 font-medium tracking-wide text-(--color-fireworks1) hover:text-white
-                 transition-colors duration-300 rounded shadow-md md:w-auto md:mr-4 md:mb-0 bg-(--color-fireworks1) hover:bg-(--color-fireworks3) focus:shadow-outline focus:outline-none"
+                 transition-colors rounded shadow-md md:w-auto md:mr-4 md:mb-0 bg-(--color-fireworks1) hover:bg-(--color-fireworks3) focus:shadow-outline focus:outline-none"
               >
                 Apply Now
               </Link>
@@ -51,7 +51,7 @@ export const Header = () => {
         </div>
         <div className="inset-y-0 right-0 w-full max-w-xl px-4  lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
         <img src="https://esocs.church/assets/assets/images/website/slider/20230220_071647_603999.jpg" alt="ESOCS Image"
-        className="rounded-full pt-5 shadow-xl shadow-amber-700" data-aos="zoom-in" data-aos-duration="2000"/>
+        className="rounded-full pt-5 shadow-xl shadow-black/50 " data-aos="zoom-in" data-aos-duration="2000"/>
         </div>
 
       </div>
