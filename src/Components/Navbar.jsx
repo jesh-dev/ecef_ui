@@ -17,21 +17,6 @@ export const Nav = () => {
             <img src="https://esocs.church/assets/assets/images/website/20230220_073758_6540941.png"
              alt="Eternal Sacred Order Of Cherubim &amp; Seraphim"
              className="w-12 rounded-full"></img>
-            {/* <svg
-              className="w-8 text-teal-accent-400"
-              viewBox="0 0 24 24"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeMiterlimit="10"
-              stroke="currentColor"
-              fill="none"
-            >
-              <rect x="3" y="1" width="7" height="12" />
-              <rect x="3" y="17" width="7" height="6" />
-              <rect x="14" y="1" width="7" height="6" />
-              <rect x="14" y="11" width="7" height="12" />
-            </svg> */}
             <span className="ml-2 text-xl font-bold tracking-wide bg-gradient-to-r from-white to-violet-700 bg-clip-text text-transparent uppercase">
               Ecef
             </span>
@@ -84,7 +69,7 @@ export const Nav = () => {
                 About
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to="/verify"
                 aria-label="Verify"
@@ -93,7 +78,7 @@ export const Nav = () => {
               >
                 Verify
               </Link>
-            </li>
+            </li> */}
           </ul>
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>
@@ -186,16 +171,7 @@ export const Nav = () => {
                           Home
                         </Link>
                       </li>
-                      {/* <li>
-                        <a
-                          href="/"
-                          aria-label="Our product"
-                          title="Our product"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Pricing
-                        </a>
-                      </li> */}
+        
                       <li>
                         <Link
                           to="/contact"
@@ -216,16 +192,7 @@ export const Nav = () => {
                           About
                         </Link>
                       </li>
-                      <li>
-                        <Link
-                          to="/verify"
-                          aria-label="About ECEF"
-                          title="About ECEF"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Verify
-                        </Link>
-                      </li>
+                    
                       <li>
                         <Link
                           to="/login"

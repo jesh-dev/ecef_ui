@@ -1,7 +1,7 @@
 
 export const Footer = () => {
     return (
-      <div className="px-4 pt-16 mx-0 sm:max-w-xl md:max-w-full lg:max-w-screen-full md:px-24 lg:px-8
+      <div className="px-4  pt-16 sm:max-w-full md:max-w-full lg:max-w-full  md:px-24 lg:px-8
       bg-(--color-fireworks2)">
         <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4 ">
           <div className="sm:col-span-2">
@@ -109,10 +109,10 @@ export const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t border-t-white lg:flex-row">
-          <p className="text-sm text-gray-300">
+          <p className="text-sm flex self-center text-gray-300">
             © Copyright 2020 Lorem Inc. All rights reserved.
           </p>
-          <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 md::bg-white  sm:flex-row">
+          <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:justify-around max-sm:flex max-sm:items-center sm:flex-row">
             <li>
               <a
                 href="/"
