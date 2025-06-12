@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Nav } from '../Components/Navbar'
 import { Footer } from '../Components/Footer'
 import { EyeSlashIcon } from '@heroicons/react/24/solid';
@@ -14,7 +14,24 @@ const Login = () => {
   });
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
+  const [message, setMessage] = useState('');
+  const [showMessage, setShowMessage] = useState(false);
 
+    useEffect(() => {
+    if (message) {
+      setShowMessage(true);
+      const timer = setTimeout(() => {
+        setShowMessage(false);
+        setMessage('');
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
+
+
+  
+  
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -35,6 +52,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setMessage('Form submitted successfully!');
     if (!validateForm()) {
       return;
     }
@@ -46,6 +64,7 @@ const Login = () => {
       });
       // console.log(response);
       if (response.status === 200) {
+        // setMessage('Form Submitted Successfully!');
         alert(response.data.message);
         console.log(response);
         localStorage.setItem("user", JSON.stringify(response.data.user));
@@ -63,7 +82,7 @@ const Login = () => {
     } catch (error) {
       alert(response.data.message);
       console.log(response)
-      setErrors(response.data.message);
+      // setErrors(response.data.message);
       // if (response.data.success === false) {
       //   alert('wrong credentials');
       // }
@@ -72,7 +91,11 @@ const Login = () => {
   return (
     <>
     <Nav/>
-    <div className="mt-30">
+    <div className="mt-35 mb-30">
+
+      <div>
+        {showMessage && <p>{response.data.message}</p>}
+      </div>
      
        <form
        onSubmit={handleSubmit}
