@@ -1,10 +1,10 @@
 
 export const Footer = () => {
     return (
-      <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8
+      <div className="px-4 pt-16 mx-0 sm:max-w-xl md:max-w-full lg:max-w-screen-full md:px-24 lg:px-8
       bg-(--color-fireworks2)">
         <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4 ">
-          <div className="sm:col-span-2"  data-aos="fade-right" data-aos-duration="2000">
+          <div className="sm:col-span-2">
             <a
               href="/"
               aria-label="Go home"
@@ -71,7 +71,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div  data-aos="fade-left" data-aos-duration="2000">
+          <div  >
             <span className="text-base font-bold tracking-wide bg-gradient-to-r from-blue-500 to-violet-700 bg-clip-text text-transparent uppercase">
               Social
             </span>

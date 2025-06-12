@@ -10,7 +10,7 @@ export const Nav = () => {
         <div className="relative flex items-center justify-between">
           <a
             href="/"
-            aria-label="ESOCS"
+            aria-label="ESOCSsss"
             title="ESOCS"
             className="inline-flex items-center"
           >

@@ -1,7 +1,19 @@
-function ContactPage() {  
+function ContactPage() { 
+  
+// const [formData, setFormData] = useState({
+//   firstname: "",
+//   lastname: "",
+//   email: "",
+//   message: "",
+// });
+
+// const handleChange = (e) => {
+//   setFormData({ ...formData, [e.target.name]: e.target.value });
+// };
+
   return (  
     <>
-    <div className=" bg-white mt-30 mb-30 flex items-center justify-center p-4">  
+    <div className=" bg-gray-800 mt-35 mb-30 flex container mr-0 ml-0 items-center justify-center mx-0 p-4">  
       {/* Container card */}  
       <div className="bg-white rounded-lg shadow-lg max-w-4xl w-full p-6 md:p-8 sm:p-4">  
         <h2 className="text-3xl font-bold text-gray-800 text-center mb-4">Get in Touch</h2>  

@@ -4,9 +4,10 @@ import { Footer } from '../Components/Footer'
 import { EyeSlashIcon } from '@heroicons/react/24/solid';
 import { EyeIcon } from '@heroicons/react/24/solid';
 import axios from 'axios';
-// import donate from '../Dashboard/DonationPage';
-
+import { useNavigate } from 'react-router-dom'
 const Login = () => {
+
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -24,15 +25,9 @@ const Login = () => {
       newErrors.email = "email is required";
     }
 
-    if (!formData.password.trim()) {
+    if (!formData.password) {
       newErrors.password = "password is required";
-    } else if (
-      !/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[a-zA-Z0-9]{8,}$/.test(
-        formData.password
-      )
-    ) {
-      newErrors.password = "Unsupported Password Syntax";
-    }
+    }                                                                         
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -44,21 +39,34 @@ const Login = () => {
       return;
     }
     
-    try {
+     try {
       const response = await axios.post("http://127.0.0.1:8000/api/login", {
         email: formData.email.trim(),
         password: formData.password,
       });
-      if (response.status === 201) {
-        localStorage.setItem("user", JSON.stringify(response.data.user));
+      // console.log(response);
+      if (response.status === 200) {
         alert(response.data.message);
-        console.log(response.data);
-        history.pushState('/donate');
+        console.log(response);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+      }
+      if (response.data.success === true) {
+        localStorage.setItem("token", response.data.token);
+        const role = response.data.user.role;
+        if (role === "admin") {
+          navigate("/");
+        } else {
+          navigate("/donate");
+        }
+
       }
     } catch (error) {
-      alert(error.response.data.message);
-      setErrors(error.response.data.errors);
-      console.log(error);
+      alert(response.data.message);
+      console.log(response)
+      setErrors(response.data.message);
+      // if (response.data.success === false) {
+      //   alert('wrong credentials');
+      // }
     }
   };
   return (

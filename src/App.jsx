@@ -6,8 +6,8 @@ import { Content } from "./Pages/Product";
 import About from "./Pages/About";
 import Login from "./Pages/Login";
 import { Contact } from "./Pages/Contact";
-import DonationPage from "./Dashboard/DonationPage";
 import Verify from "./Pages/Verify";
+import DonationForm from "./Dashboard/DonationForm";
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/donate" element={<DonationPage />} />
+          <Route path="/donate" element={<DonationForm/>} />
           <Route path="/verify" element={<Verify />} />
         </Routes>
       </BrowserRouter>

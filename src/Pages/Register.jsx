@@ -4,6 +4,7 @@ import { EyeSlashIcon } from "@heroicons/react/24/outline";
 import { EyeIcon } from "@heroicons/react/24/outline";
 import axios from "axios";
 import { Footer } from "../Components/Footer";
+import { useNavigate } from 'react-router-dom';
 
 function MyForm() {
   const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ function MyForm() {
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
+  const navigate = useNavigate();
   // Function to Capture user entry
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -84,14 +85,15 @@ function MyForm() {
       });
       if (response.status === 201) {
         alert(response.data.message);
-        reset();
-    }
+        console.log(response);
+        if(response.data.success === true) {
+           navigate('/verify');
+        }
+      }
     } catch (error) {
       console.log(error);
       alert(error.response.data.message);
-      reset();
-      setErrors(error.response.data.errors);
-
+      // setErrors(response.data);
     }
   };
   return (
@@ -213,20 +215,20 @@ function MyForm() {
             >
               Province:
             </label>
-            <select 
-            value={formData.province}
-            onChange={handleChange}
-            name="province"
-            id="province" 
-            placeholder="--select Province--"
-            className="shadow appearance-none border rounded bg-white/50
-              w-full py-2 px-3 text-gray-700 leading-tight text-gray-700
+            <select
+              value={formData.province}
+              onChange={handleChange}
+              name="province"
+              id="province"
+              placeholder="--select Province--"
+              className="shadow appearance-none border rounded bg-white/50
+              w-full py-2 px-3 leading-tight text-gray-700
               focus:bg-white focus:outline-blue-700 focus:shadow-outline"
-              >
-              <option  value="">--Select Province--</option>
-              <option  value="mainland">Mainland</option>
-              <option  value="lagos">Lagos</option>
-              <option  value="lagos_mainland_1">Lagos Mainland 1</option>
+            >
+              <option value="">--Select Province--</option>
+              <option value="mainland">Mainland</option>
+              <option value="lagos">Lagos</option>
+              <option value="lagos_mainland_1">Lagos Mainland 1</option>
             </select>
           </div>
           <div className="mb-4">
@@ -236,20 +238,20 @@ function MyForm() {
             >
               Branch:
             </label>
-            <select 
-            value={formData.branch}
-            onChange={handleChange}
-            name="branch"
-            id="branch" 
-            placeholder="--select Branch--"
-            className="shadow appearance-none border rounded bg-white/50
-              w-full py-2 px-3 text-gray-700 leading-tight text-gray-700
+            <select
+              value={formData.branch}
+              onChange={handleChange}
+              name="branch"
+              id="branch"
+              placeholder="--select Branch--"
+              className="shadow appearance-none border rounded bg-white/50
+              w-full py-2 px-3 leading-tight text-gray-700
               focus:bg-white focus:outline-blue-700 focus:shadow-outline"
-              >
-              <option  value="">--Select Branch--</option>
-              <option  value="branch_1">Branch 1</option>
-              <option  value="branch_2">Branch 2</option>
-              <option  value="branch_3">Branch 3</option>
+            >
+              <option value="">--Select Branch--</option>
+              <option value="branch_1">Branch 1</option>
+              <option value="branch_2">Branch 2</option>
+              <option value="branch_3">Branch 3</option>
             </select>
           </div>
 
@@ -387,8 +389,8 @@ function MyForm() {
             text-white font-semibold py-2 px-4 rounded-lg
             transition-all duration-200 transform hover:scale-[1.02] 
             focus:outline-none focus:shadow-outline
-            shadow-md mb-5 mt-5  cursor-pointer
-          shadow-md active:transform active:scale-[0.98]"
+            mb-5 mt-5  cursor-pointer
+            shadow-md active:transform active:scale-[0.98]"
             type="submit"
           >
             Create Account

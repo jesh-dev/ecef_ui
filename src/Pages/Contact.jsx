@@ -6,7 +6,6 @@ import { Nav } from "../Components/Navbar";
     return (
         <>
         <Nav/>
-          {/* <h1 classname=" text-bold">Contact Us</h1> */}
           <ContactPage/>    
       <Footer/>
       </>
