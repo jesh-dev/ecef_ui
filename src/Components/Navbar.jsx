@@ -31,23 +31,9 @@ export const Nav = () => {
               >
                 Home
               </a>
-              {/* <a
-                href="/"
-                
-              >
-                Product
-              </a> */}
+          
             </li>
-            <li>
-              <Link
-                to="/Donate"
-                aria-label="Our product"
-                title="Our product"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Donate
-              </Link>
-            </li>
+
             <li>
               <Link
                 to="/contact"
@@ -69,16 +55,6 @@ export const Nav = () => {
                 About
               </Link>
             </li>
-            {/* <li>
-              <Link
-                to="/verify"
-                aria-label="Verify"
-                title=" Verify"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Verify
-              </Link>
-            </li> */}
           </ul>
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>

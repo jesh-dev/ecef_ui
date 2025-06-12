@@ -112,11 +112,7 @@ export const Footer = () => {
           <p className="text-sm flex self-center text-gray-300">
             © Copyright 2020 Lorem Inc. All rights reserved.
           </p>
-<<<<<<< HEAD
           <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:justify-around max-sm:flex max-sm:items-center sm:flex-row">
-=======
-          <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 md::bg-white  sm:flex-row">
->>>>>>> 0e3c3c4887d63a62b3b04ead5b5579ab9c6c5798
             <li>
               <a
                 href="/"

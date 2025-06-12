@@ -8,6 +8,9 @@ import Login from "./Pages/Login";
 import { Contact } from "./Pages/Contact";
 import Verify from "./Pages/Verify";
 import DonationForm from "./Dashboard/DonationForm";
+import ProtectedRoute from "./ProtectedRoute"; // ✅ Import this
+import Logout from "./Pages/Logout";
+import GuestRoute from "./GuestRoute";
 
 const App = () => {
   return (
@@ -15,13 +18,43 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<MyForm />} />
           <Route path="/product" element={<Content />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/donate" element={<DonationForm/>} />
-          <Route path="/verify" element={<Verify />} />
+           <Route path="/logout" element={<Logout />} />
+
+      <Route
+          path="/donate"
+          element={
+            <ProtectedRoute role="user">
+              <DonationForm/>
+            </ProtectedRoute>
+          }
+        />
+           <Route
+          path="/register"
+          element={
+            <GuestRoute>
+              <MyForm />
+            </GuestRoute>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <GuestRoute>
+              <Login />
+            </GuestRoute>
+          }
+        />
+         <Route
+          path="/verify"
+          element={
+            <GuestRoute>
+              <Verify />
+            </GuestRoute>
+          }
+        />
         </Routes>
       </BrowserRouter>
     </>
