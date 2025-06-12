@@ -16,6 +16,7 @@ const images = [
 ];
 
 export const Header = () => {
+<<<<<<< HEAD
   const [currentImage, setCurrentImage] = useState(0);
 
 useEffect(() => {
@@ -38,6 +39,29 @@ useEffect(() => {
                 className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-500"
               >
                 Esocs Collaboration
+=======
+    return (
+      <div className="relative  dark:text-white bg-white flex flex-col py-16 lg:pt-0 mt-19 lg:flex-col lg:pb-0">
+        <div className="flex flex-col items-start w-full max-w-xl px-4  lg:px-8 lg:max-w-screen-xl">
+          <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
+            <div className="max-w-xl mb-6">
+              <div>
+                <p data-aos="fade-up" data-aos-duration="3000"  className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+                  Esocs Collaboration
+                </p>
+              </div>
+              <h2 data-aos="fade-up" data-aos-duration="2000" className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+                 The ESOCS Centenary
+                <br className="hidden md:block" />
+                <span className="inline-block text-deep-purple-accent-400">
+                  Endowment Fund
+                </span>
+              </h2>
+              <p data-aos="zoom-in" data-aos-duration="2000" className="text-base dark:text-white  text-gray-700 md:text-lg">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae. explicabo.
+>>>>>>> 0e3c3c4887d63a62b3b04ead5b5579ab9c6c5798
               </p>
             </div>
             <h2
@@ -79,6 +103,7 @@ useEffect(() => {
             </Link>
           </div>
         </div>
+<<<<<<< HEAD
       </div>
       <div className="inset-y-0 right-0 w-full max-w-xl px-4 lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
       <div className="relative w-full h-full overflow-hidden">
@@ -98,6 +123,12 @@ useEffect(() => {
     />
   </AnimatePresence>
 </div>
+=======
+        <div className="inset-y-0 right-0 w-full max-w-xl px-4  lg:pl-8 lg:pr-0 lg:mb-0 grayscale hover:grayscale-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
+        <img src="https://esocs.church/assets/assets/images/website/slider/20230220_071647_603999.jpg" alt="ESOCS Image"
+        className="rounded-full pt-5 shadow-xl shadow-black/50 " data-aos="zoom-in" data-aos-duration="2000"/>
+        </div>
+>>>>>>> 0e3c3c4887d63a62b3b04ead5b5579ab9c6c5798
 
       </div>
     </div>
