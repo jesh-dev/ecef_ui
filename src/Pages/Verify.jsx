@@ -61,12 +61,12 @@ function Verify() {
   return (
     <>
       <Nav />
-      <div className="mt-30">
+      <div className="mt-35 mb-30">
         <form
           onSubmit={handleSubmit}
-          className="max-w-md mx-auto p-6 rounded shadow-md bg-(--color-fireworks2)"
+          className="max-w-md mx-auto p-6 rounded shadow-xl bg-white backdrop-blur-lg"
         >
-          <div className="font-bold text-3xl flex justify-center text-white uppercase ">
+          <div className="font-bold text-3xl flex pb-10 justify-center text-(--color-fireworks1) uppercase ">
              Verify Your Account
           </div>
           <div className="mb-4">

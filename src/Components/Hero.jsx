@@ -6,8 +6,8 @@ import AOS from 'aos';
 
 export const Header = () => {
     return (
-      <div className="relative dark:bg-black dark:text-white bg-white flex flex-col py-16 lg:pt-0 mt-19 lg:flex-col lg:pb-0">
-        <div className="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
+      <div className="relative  dark:text-white bg-white flex flex-col py-16 lg:pt-0 mt-19 lg:flex-col lg:pb-0">
+        <div className="flex flex-col items-start w-full max-w-xl px-4  lg:px-8 lg:max-w-screen-xl">
           <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
             <div className="max-w-xl mb-6">
               <div>
@@ -49,7 +49,7 @@ export const Header = () => {
             </div>
           </div>
         </div>
-        <div className="inset-y-0 right-0 w-full max-w-xl px-4  lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
+        <div className="inset-y-0 right-0 w-full max-w-xl px-4  lg:pl-8 lg:pr-0 lg:mb-0 grayscale hover:grayscale-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
         <img src="https://esocs.church/assets/assets/images/website/slider/20230220_071647_603999.jpg" alt="ESOCS Image"
         className="rounded-full pt-5 shadow-xl shadow-black/50 " data-aos="zoom-in" data-aos-duration="2000"/>
         </div>
