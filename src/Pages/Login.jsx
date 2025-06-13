@@ -88,7 +88,7 @@ const Login = () => {
   return (
     <>
       <Nav />
-      <div className="mt-30 bg-white">
+      <div className="mt-35 mb-30 bg-white">
         <form
           onSubmit={handleSubmit}
           className="max-w-md mx-auto p-6 rounded-xl shadow-xl shadow-black/30 "

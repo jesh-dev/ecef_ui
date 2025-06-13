@@ -10,7 +10,7 @@ import Verify from "./Pages/Verify";
 import DonationForm from "./Dashboard/DonationForm";
 import ProtectedRoute from "./ProtectedRoute"; // ✅ Import this
 import Logout from "./Pages/Logout";
-import GuestRoute from "./GuestRoute";
+// import GuestRoute from "./GuestRoute";
 
 const App = () => {
   return (
@@ -34,25 +34,20 @@ const App = () => {
            <Route
           path="/register"
           element={
-            <GuestRoute>
               <MyForm />
-            </GuestRoute>
           }
         />
         <Route
           path="/login"
           element={
-            <GuestRoute>
               <Login />
-            </GuestRoute>
+          
           }
         />
          <Route
           path="/verify"
           element={
-            <GuestRoute>
               <Verify />
-            </GuestRoute>
           }
         />
         </Routes>

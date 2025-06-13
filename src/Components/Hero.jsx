@@ -22,7 +22,7 @@ export const Header = () => {
                   Endowment Fund
                 </span>
               </h2>
-              <p data-aos="zoom-in" data-aos-duration="2000" className="text-base dark:text-white  text-gray-700 md:text-lg">
+              <p data-aos="zoom-in" data-aos-duration="2000" className="text-base dark:text-teal-500  text-gray-700 sm:text-sm md:text-lg">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                 quae. explicabo.
