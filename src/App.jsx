@@ -21,18 +21,19 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/logout" element={<Logout />} />
-
-          <Route
-            path="/user"
-            element={
-              // <ProtectedRoute role="user">
-                <UserDashboard />
-              // {/* </ProtectedRoute> */}
-            }
-          />
           <Route path="/register" element={<MyForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/verify" element={<Verify />} />
+
+           {/* ✅ Protected User Route */}
+        <Route
+          path="/user"
+          element={
+            <ProtectedRoute role="user">
+              <UserDashboard />
+            </ProtectedRoute>
+          }
+        />
         </Routes>
       </BrowserRouter>
     </>

@@ -82,7 +82,6 @@ const Login = () => {
     } catch (error) {
       alert(error.response.data.message);
       console.log(error);
-      // setErrors(response.data.message);
     }
   };
   return (

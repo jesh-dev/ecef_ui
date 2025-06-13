@@ -17,7 +17,7 @@ const StatCard = ({ end, title, description }) => {
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: 0.2 }}
-      className="p-6 bg-white shadow-lg rounded-lg"
+      className="p-6 bg-white dark:shadow-teal-700 dark:shadow-lg shadow-lg rounded-lg"
     >
       <div className="flex items-center mb-2">
         <h6 className="mr-2 text-4xl font-bold md:text-5xl text-deep-purple-accent-400">
@@ -43,7 +43,7 @@ const StatCard = ({ end, title, description }) => {
 
 export const Stat = () => {
   return (
-    <div className="px-4 py-16 mx-auto max-w-7xl md:px-24 lg:px-8 lg:py-20">
+    <div className="px-4 py-16 mx-auto max-w-full dark:bg-black md:px-24 lg:px-8 lg:py-20">
       <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
         <StatCard
           end={86000}

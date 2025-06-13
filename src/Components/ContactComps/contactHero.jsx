@@ -13,19 +13,32 @@ const [formData, setFormData] = useState({
 const handleChange = (e) => {
   setFormData({ ...formData, [e.target.name]: e.target.value });
 };
-// const validateForm = () => {
-//    const newErrors = {};
+const [errors, setErrors] = useState({});
+const validateForm = () => {
+   const newErrors = {};
 
-//    if (!formData.email.trim()) {
-//      newErrors.email = "email is required";
-//    }
+   if (!formData.name.trim()) {
+     newErrors.Name = "Fullname is required";
+   }
+   if (!formData.email.trim()) {
+     newErrors.email = "email is required";
+   }
+   if (!formData.subject.trim()) {
+     newErrors.subject = "subject is required";
+   }
+   if (!formData.message.trim()) {
+     newErrors.message = "message is required";
+   }
 
-//    setErrors(newErrors);
-//    return Object.keys(newErrors).length === 0;
-//  };
+   setErrors(newErrors);
+   return Object.keys(newErrors).length === 0;
+ };
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+  if( !validateForm()) {
+    return;
+  }
 
   try {
     const response = await axios.post('http://127.0.0.1:8000/api/contact', {
@@ -34,6 +47,9 @@ const handleSubmit = async (e) => {
       subject: formData.subject.trim(),
       message: formData.message.trim(),
     });
+    if (response.status === 200) {
+      alert(response.data.message);
+    }
   } catch (err) {
     console.log(err);
     alert('Failed to send email');
@@ -55,6 +71,7 @@ const handleSubmit = async (e) => {
           {/* Name */}  
           <div className="flex flex-col w-full">  
             <label className="mb-2 text-sm font-medium text-gray-700"
+            htmlFor='name'
             >Full Name</label>  
             <input  
               type="text"
@@ -69,7 +86,8 @@ const handleSubmit = async (e) => {
 
           {/* Email */}  
           <div className="flex flex-col w-full">  
-            <label className="mb-2 text-sm font-medium text-gray-700">Email</label>  
+            <label className="mb-2 text-sm font-medium text-gray-700"
+            htmlFor='email'>Email</label>  
             <input  
               type="email"  
               name='email'
@@ -83,7 +101,8 @@ const handleSubmit = async (e) => {
 
           {/* Subject (full width on small screens) */}  
           <div className="md:col-span-2 flex flex-col w-full">  
-            <label className="mb-2 text-sm font-medium text-gray-700">Subject</label>  
+            <label className="mb-2 text-sm font-medium text-gray-700"
+            htmlFor='subject'>Subject</label>  
             <input  
               type="text"  
               name='subject'
@@ -97,7 +116,9 @@ const handleSubmit = async (e) => {
 
           {/* Message (full width on small screens) */}  
           <div className="md:col-span-2 flex flex-col w-full">  
-            <label className="mb-2 text-sm font-medium text-gray-700">Message</label>  
+            <label className="mb-2 text-sm font-medium text-gray-700"
+            htmlFor='message'
+            >Message</label>  
             <textarea  
               rows={5}  
               placeholder="Your message..." 

@@ -6,7 +6,7 @@ import AOS from 'aos';
 
 export const Header = () => {
     return (
-      <div className="relative  dark:text-white bg-white flex flex-col py-16 lg:pt-0 mt-19 lg:flex-col lg:pb-0">
+      <div className="relative  dark:text-white dark:bg-black bg-white flex flex-col py-16 lg:pt-0 mt-19 lg:flex-col lg:pb-0">
         <div className="flex flex-col items-start w-full max-w-xl px-4  lg:px-8 lg:max-w-screen-xl">
           <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
             <div className="max-w-xl mb-6">
@@ -22,7 +22,7 @@ export const Header = () => {
                   Endowment Fund
                 </span>
               </h2>
-              <p data-aos="zoom-in" data-aos-duration="2000" className="text-base dark:text-teal-500  text-gray-700 sm:text-sm md:text-lg">
+              <p data-aos="zoom-in" data-aos-duration="2000" className="text-base dark:text-teal-500 text-gray-700 sm:text-sm md:text-lg">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                 quae. explicabo.

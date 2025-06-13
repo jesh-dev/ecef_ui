@@ -23,12 +23,12 @@ export const Feature = () => {
   const [selected, setSelected] = useState(null);
 
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full dark:bg-black  lg:max-w-screen-full md:px-24 lg:px-8 lg:py-20">
       <div className="grid gap-8 row-gap-5 lg:grid-cols-3">
         {features.map((feature, index) => (
           <motion.div
             key={index}
-            className="relative p-px overflow-hidden transition transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl cursor-pointer"
+            className="relative p-px overflow-hidden transition transform border rounded shadow-sm dark:shadow-lg dark:shadow-teal-700 hover:scale-105 group hover:shadow-xl cursor-pointer"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
             onClick={() => setSelected(feature)}
