@@ -67,13 +67,14 @@ const Login = () => {
           setShowModal(true);
 
           // ✅ Set in AuthContext
-          login(user);
+          login(user, token);
 
           setTimeout(() => {
             // ✅ Navigate based on role
             if (user.role === "admin") {
               navigate("/admin");
             } else {
+              console.log(response);
               navigate("/user");
             }
           }, 3000);
