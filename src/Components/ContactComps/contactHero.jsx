@@ -20,10 +20,6 @@ const handleChange = (e) => {
 //      newErrors.email = "email is required";
 //    }
 
-//    if (!formData.password) {
-//      newErrors.password = "password is required";
-//    }
-
 //    setErrors(newErrors);
 //    return Object.keys(newErrors).length === 0;
 //  };
@@ -62,7 +58,8 @@ const handleSubmit = async (e) => {
             >Full Name</label>  
             <input  
               type="text"
-              name='name'  
+              name='name' 
+              id='name' 
               value={formData.name}
               onChange={handleChange}
               placeholder="Your full name"  
@@ -76,6 +73,7 @@ const handleSubmit = async (e) => {
             <input  
               type="email"  
               name='email'
+              id='email'
               value={formData.email}
               onChange={handleChange}
               placeholder="you@example.com"  
@@ -89,6 +87,7 @@ const handleSubmit = async (e) => {
             <input  
               type="text"  
               name='subject'
+              id='subject'
               value={formData.subject}
               onChange={handleChange}
               placeholder="Subject"  
@@ -103,6 +102,7 @@ const handleSubmit = async (e) => {
               rows={5}  
               placeholder="Your message..." 
               name='message'
+              id='message'
               value={formData.message}
               onChange={handleChange} 
               className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent resize-none"  

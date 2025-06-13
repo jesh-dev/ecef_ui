@@ -48,13 +48,13 @@ function Verify() {
       });
       if (response.status === 200) {
         alert(response.data.message);
-        reset();
+        // reset();
       }
     } catch (error) {
       console.log(error);
       alert(error.response.data.message);
-      reset();
-      setErrors(error.response.data.errors);
+      // reset();
+      // setErrors(error.response.data.errors);
 
     }
   };

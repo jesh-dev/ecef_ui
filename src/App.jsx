@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import MyForm from "./Pages/Register";
@@ -7,9 +6,9 @@ import About from "./Pages/About";
 import Login from "./Pages/Login";
 import { Contact } from "./Pages/Contact";
 import Verify from "./Pages/Verify";
-import DonationForm from "./Dashboard/DonationForm";
 import ProtectedRoute from "./ProtectedRoute"; // ✅ Import this
 import Logout from "./Pages/Logout";
+import { UserDashboard } from "./Dashboard/UserDashboard";
 // import GuestRoute from "./GuestRoute";
 
 const App = () => {
@@ -21,35 +20,19 @@ const App = () => {
           <Route path="/product" element={<Content />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-           <Route path="/logout" element={<Logout />} />
+          <Route path="/logout" element={<Logout />} />
 
-      <Route
-          path="/donate"
-          element={
-            <ProtectedRoute role="user">
-              <DonationForm/>
-            </ProtectedRoute>
-          }
-        />
-           <Route
-          path="/register"
-          element={
-              <MyForm />
-          }
-        />
-        <Route
-          path="/login"
-          element={
-              <Login />
-          
-          }
-        />
-         <Route
-          path="/verify"
-          element={
-              <Verify />
-          }
-        />
+          <Route
+            path="/user"
+            element={
+              // <ProtectedRoute role="user">
+                <UserDashboard />
+              // {/* </ProtectedRoute> */}
+            }
+          />
+          <Route path="/register" element={<MyForm />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/verify" element={<Verify />} />
         </Routes>
       </BrowserRouter>
     </>

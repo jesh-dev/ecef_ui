@@ -74,7 +74,7 @@ const Login = () => {
             if (user.role === "admin") {
               navigate("/admin");
             } else {
-              navigate("/donate");
+              navigate("/user");
             }
           }, 3000);
         }
