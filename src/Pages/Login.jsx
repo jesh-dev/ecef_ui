@@ -11,7 +11,10 @@ import Modal from "../Components/Modal";
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth(); 
+  // const [showModal, setShowModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
+const [loginMessage, setLoginMessage] = useState("");
+
 
 
   const [formData, setFormData] = useState({
@@ -54,16 +57,21 @@ const Login = () => {
       });
       const verified = response.data.user.email_verified_at;
       if (verified === null) {
-        console.log("Please verify your email");
-        alert("Please verify your email");
+        // console.log("Please verify your email");
+        // alert("Please verify your email");
+        setLoginMessage("Please verify your email");
+  setShowModal(true);
       } else {
         if (response.status === 200 && response.data.success) {
           const user = response.data.user;
           const token = response.data.token;
+          console.log(user);
 
           // Save to localStorage
           localStorage.setItem("token", token);
           localStorage.setItem("user", JSON.stringify(user));
+            setLoginMessage(response.data.message);
+
           setShowModal(true);
 
           // ✅ Set in AuthContext
@@ -81,8 +89,11 @@ const Login = () => {
         }
       }
     } catch (error) {
-      alert(error.response.data.message);
-      console.log(error);
+      setLoginMessage(error.response.data.message || "Login failed");
+setShowModal(true);
+
+      // alert(error.response.data.message);
+      // console.log(error);
     }
   };
   return (
@@ -180,28 +191,26 @@ const Login = () => {
         </form>
 
         <Modal open={showModal} onClose={() => setShowModal(false)}>
-          <div className="flex flex-col items-center space-y-3">
-            <svg
-              className="w-10 h-10 text-green-500"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <h2 className="text-xl font-semibold text-center">
-              Login Successful!
-            </h2>
-            <p className="text-center text-sm">
-              Redirecting to your dashboard...
-            </p>
-          </div>
-        </Modal>
+  <div className="flex flex-col items-center space-y-3">
+    <svg
+      className="w-10 h-10 text-green-500"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+    </svg>
+    <h2 className="text-xl font-semibold text-center">
+      {loginMessage}
+    </h2>
+    {/* <p className="text-center text-sm">
+      {loginMessage === "Please verify your email"
+        ? "Check your inbox for the verification link."
+        : "Redirecting to your dashboard..."}
+    </p> */}
+  </div>
+</Modal>
+
       </div>
 
       <Footer />

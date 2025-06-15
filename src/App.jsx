@@ -8,7 +8,11 @@ import { Contact } from "./Pages/Contact";
 import Verify from "./Pages/Verify";
 import ProtectedRoute from "./ProtectedRoute"; // ✅ Import this
 import Logout from "./Pages/Logout";
-import { UserDashboard } from "./Dashboard/UserDashboard";
+import { UserBoard } from "./Dashboard/Users/UserDashboard";
+import PaymentForm from "./Dashboard/Users/UserComponents/PaymentForm";
+import PaymentHistory from "./Dashboard/Users/UserComponents/PaymentHistory";
+import Overview from "./Dashboard/Users/UserComponents/Overview";
+import Profile from "./Dashboard/Users/UserComponents/Profile";
 // import GuestRoute from "./GuestRoute";
 
 const App = () => {
@@ -24,13 +28,44 @@ const App = () => {
           <Route path="/register" element={<MyForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/verify" element={<Verify />} />
-
            {/* ✅ Protected User Route */}
         <Route
           path="/user"
           element={
             <ProtectedRoute role="user">
-              <UserDashboard />
+              <UserBoard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/payment"
+          element={
+            <ProtectedRoute role="user">
+              <PaymentForm/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/payHistory"
+          element={
+            <ProtectedRoute role="user">
+              <PaymentHistory />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/overview"
+          element={
+            <ProtectedRoute role="user">
+              <Overview />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute role="user">
+              <Profile />
             </ProtectedRoute>
           }
         />

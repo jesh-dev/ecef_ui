@@ -5,6 +5,9 @@ import { EyeIcon } from "@heroicons/react/24/outline";
 import axios from "axios";
 import { Footer } from "../Components/Footer";
 import { useNavigate } from 'react-router-dom';
+import VerifyModal from "./Verify";
+import RegisterModal from "../Components/RegisterModal"; // adjust the path if needed
+
 
 function MyForm() {
   const [formData, setFormData] = useState({
@@ -17,6 +20,13 @@ function MyForm() {
     province: "",
     branch: "",
   });
+  
+  const [modalOpen, setModalOpen] = useState(false);
+  const [verifyModalOpen, setVerifyModalOpen] = useState(false); // VerifyModal
+
+const [modalMessage, setModalMessage] = useState("");
+const [modalType, setModalType] = useState("info"); // or "success" / "error"
+
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -65,37 +75,50 @@ function MyForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!validateForm()) {
-      return;
-    }
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!validateForm()) return;
 
-    try {
-      const response = await axios.post("http://127.0.0.1:8000/api/register", {
-        firstname: formData.firstname.trim(),
-        lastname: formData.lastname.trim(),
-        email: formData.email.trim(),
-        phone_number: formData.phone_number.trim(),
-        province: formData.province,
-        branch: formData.branch,
-        password: formData.password.trim(),
-        // role: formData.role,
-        // gender: formData.gender,
-      });
-      if (response.status === 201) {
-        alert(response.data.message);
-        console.log(response);
-        if(response.data.success === true) {
-           navigate('/verify');
-        }
-      }
-    } catch (error) {
-      console.log(error);
-      alert(error.response.data.message);
-      // setErrors(response.data);
+  try {
+    const response = await axios.post("http://127.0.0.1:8000/api/register", {
+      firstname: formData.firstname.trim(),
+      lastname: formData.lastname.trim(),
+      email: formData.email.trim(),
+      phone_number: formData.phone_number.trim(),
+      province: formData.province,
+      branch: formData.branch,
+      password: formData.password.trim(),
+    });
+
+    // Debug: see what you get from backend
+    console.log("Registration response:", response);
+
+    // Success case — accept 200 or 201 and check for a message
+    if ((response.status === 200) && response.data.success) {
+  setModalMessage("Registration successful! Please check your email for the verification code. Once verified, you'll be prompted to login.");
+      setModalType("success");
+      setModalOpen(true);
+
+      setTimeout(() => {
+        setModalOpen(false);
+        setVerifyModalOpen(true);
+      }, 3000);
+    } else {
+      setModalMessage("Unexpected response from server.");
+      setModalType("error");
+      setModalOpen(true);
     }
-  };
+  } catch (error) {
+    const msg =
+      error.response.data.message ||
+      error.message ||
+      "Registration failed.";
+    setModalMessage(msg);
+    setModalType("error");
+    setModalOpen(true);
+  }
+};
+
   return (
     <>
       <Nav />
@@ -397,6 +420,18 @@ function MyForm() {
           </button>
         </form>
       </div>
+<RegisterModal
+  isOpen={modalOpen}
+  onClose={() => setModalOpen(false)}
+  message={modalMessage}
+  type={modalType}
+/>
+
+<VerifyModal
+  isOpen={verifyModalOpen}
+  onClose={() => setVerifyModalOpen(false)}
+/>
+
 
       <Footer />
     </>
