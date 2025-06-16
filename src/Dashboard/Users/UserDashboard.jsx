@@ -3,6 +3,7 @@ import Overview from "./UserComponents/Overview";
 import PaymentForm from "./UserComponents/PaymentForm";
 import PaymentHistory from "./UserComponents/PaymentHistory";
 import Profile from "./UserComponents/Profile";
+import ProtectedRoute from "../../ProtectedRoute";
 import { useAuth } from "../../AuthContext";
 
 export const UserBoard = () => {
@@ -13,7 +14,9 @@ export const UserBoard = () => {
     <div className="min-h-screen bg-gray-100">
       <div className="bg-orange-500 text-white p-4 flex justify-between items-center">
         <h1 className="text-xl font-bold">User Dashboard</h1>
-        <p>Hello, {user?.name}</p>
+        <p>Hello, 
+          {user?.name}
+          </p>
       </div>
 
       <div className="flex">
@@ -47,10 +50,10 @@ export const UserBoard = () => {
 
         {/* Main Content */}
         <div className="flex-1 p-6">
-          {activeTab === "overview" && <Overview />}
-          {activeTab === "pay" && <PaymentForm />}
-          {activeTab === "history" && <PaymentHistory />}
-          {activeTab === "profile" && <Profile />}
+ {activeTab === "overview" && <ProtectedRoute><Overview /></ProtectedRoute>}
+          {activeTab === "pay" && <ProtectedRoute><PaymentForm /></ProtectedRoute>}
+          {activeTab === "history" && <ProtectedRoute><PaymentHistory /></ProtectedRoute>}
+          {activeTab === "profile" && <ProtectedRoute><Profile /></ProtectedRoute>}
         </div>
       </div>
     </div>
