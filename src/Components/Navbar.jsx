@@ -21,7 +21,7 @@ export const Nav = () => {
               Ecef
             </span>
           </a>
-          <ul className="flex items-center hidden space-x-8 lg:flex">
+          <ul className="flex items-center hidden space-x-12 gap-10 lg:flex">
             <li>
               <a
                 href="/"
@@ -56,6 +56,7 @@ export const Nav = () => {
               </Link>
             </li>
           </ul>
+
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>
               <Link
@@ -78,6 +79,7 @@ export const Nav = () => {
               </Link>
             </li>
           </ul>
+
           <div className="lg:hidden">
             <button
               aria-label="Open Menu"
